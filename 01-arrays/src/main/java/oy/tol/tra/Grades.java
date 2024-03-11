@@ -22,8 +22,7 @@ public class Grades {
    /**
     * The method to reverse the internal Java int array.
     */
-   public void reverse() {
-      /* TODO:
+    /* TODO:
        1. Edit the test data files to see if the reverse() really works or not.
        2. Execute the IntArrayTests to see that some of them fail.
        3. Study the code below and try to find what is the issue.
@@ -31,8 +30,10 @@ public class Grades {
        5. Fix the issue.
        6. Transform the algorithm to <strong>use</strong> the generic one from Algorithms.java, as instructed in the readme file.
       */
+   public void reverse() {
+      
       int i = 0;
-      while (i <= grades.length/2) {
+      while (i < grades.length/2) {
          int temp = grades[i];
          grades[i] = grades[grades.length-i-1];
          grades[grades.length-i-1] = temp;
@@ -52,16 +53,24 @@ public class Grades {
        5. Fix the issue.
        6. Transform the algorithm to <strong>use</strong> the generic one from Algorithms.java as instructed in the readme file.
       */
-      int i = grades.length-1;
-      while (i > 0) {
-         if (grades[i] < grades[i-1]) {
-            int tmp = grades[i];
-            grades[i] = grades[i-1];
-            grades[i-1] = tmp;
+         boolean sorted = false; // 是否已排序
+         int n = grades.length;
+         
+         while (!sorted) {
+             sorted = true; // 假设数组已排序
+             
+             for (int i = 1; i < n; i++) {
+                 if (grades[i] < grades[i - 1]) {
+                     int tmp = grades[i];
+                     grades[i] = grades[i - 1];
+                     grades[i - 1] = tmp;
+                     sorted = false; // 数组尚未排序
+                 }
+             }
+             
+             n--; // 减少未排序部分的范围
          }
-         i--;
-      }
-   }
+     }
 
    /**
     * Returns the plain Java int [] array for investigation.
