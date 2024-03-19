@@ -52,7 +52,7 @@ public class StackImplementation<E> implements StackInterface<E> {
    public void push(E element) throws StackAllocationException, NullPointerException {
                                                                                                       // TODO: Implement this
    if (element == null) {
-      throw new NullPointerException("Element cannot be null");
+      throw new NullPointerException("cannot be null");
   }
   if (currentIndex == capacity - 1) {
       int newCapacity = capacity * 2;
@@ -69,7 +69,7 @@ public class StackImplementation<E> implements StackInterface<E> {
    @Override
    public E pop() throws StackIsEmptyException {
       if (currentIndex == -1) {                                                             //
-         throw new StackIsEmptyException("Stack is empty");
+         throw new StackIsEmptyException("stack is empty");
      }
      E element = (E) itemArray[currentIndex];
      itemArray[currentIndex] = null; 
@@ -81,7 +81,7 @@ public class StackImplementation<E> implements StackInterface<E> {
    @Override
    public E peek() throws StackIsEmptyException {                                           //
       if (currentIndex == -1) {
-         throw new StackIsEmptyException("Stack is empty");
+         throw new StackIsEmptyException("stack is empty");
      }
      return (E) itemArray[currentIndex];
    }
@@ -102,7 +102,7 @@ public class StackImplementation<E> implements StackInterface<E> {
    }
 
    @Override
-   public boolean isEmpty() {
+   public boolean isEmpty() {t
                                                                                           // TODO: Implement this
       if(currentIndex == -1){
          return true;
