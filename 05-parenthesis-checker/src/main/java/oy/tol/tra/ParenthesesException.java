@@ -16,6 +16,7 @@ class ParenthesesException extends Exception {
    public static final int TOO_FEW_CLOSING_PARENTHESES = -2;
    public static final int PARENTHESES_IN_WRONG_ORDER = -3;
    public static final int STACK_FAILURE = -4;
+   public static final Throwable ERROR_STACK_ALLOCATION = null;
 
    private final int code;
 
