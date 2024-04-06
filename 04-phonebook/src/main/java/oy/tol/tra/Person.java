@@ -39,16 +39,11 @@ public class Person implements Comparable<Person> {
      */
     @Override
     public int hashCode() {
-      
-    // Implement hash function here.
-    int hash = 5381;
-    hash = 31 * hash + (firstName != null ? firstName.hashCode() : 0);
-    hash = 31 * hash + (lastName != null ? lastName.hashCode() : 0);
-    return hash;
-
-
+        int hash = 5381;
+        hash = 31 * hash + (firstName != null ? firstName.hashCode() : 0);
+        hash = 31 * hash + (lastName != null ? lastName.hashCode() : 0);
+        return hash;
     }
-
     @Override
     public boolean equals(Object other) {
         if (other instanceof Person) {

@@ -11,13 +11,13 @@ public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictiona
 
     @Override
     public Type getType() {
-        return Type.BST;
+        return Type.NONE;
     }
 
     @Override
     public int size() {
         // TODO: Implement this
-        return count;
+        return 0;
     }
 
     /**
@@ -56,35 +56,14 @@ public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictiona
             // so do not just replace it with this new node but set
             // the keys and values for the already existing root.
             
-            if (key == null) {
-                throw new IllegalArgumentException("Key cannot be null");
-            }
-            if (root == null) {
-                root = new TreeNode<>(key, value);
-                count++;
-                return true;
-            }
-    
-            int hash = key.hashCode();
-            int added = root.insert(key, value, hash);
-            if (added > 0) {
-                count++;
-                return true;
-            } else {
-                return false;
-            }
+        return false;
     }
 
     @Override
     public V find(K key) throws IllegalArgumentException {
         // TODO: Implement this. //Think about this
-        if (key == null) {
-            throw new IllegalArgumentException("cannot be null");
-        }
-        int hash = key.hashCode();
-        return root.find(key, hash);
+        return (null);
     }
-    
 
     @Override
     public void ensureCapacity(int size) throws OutOfMemoryError {
