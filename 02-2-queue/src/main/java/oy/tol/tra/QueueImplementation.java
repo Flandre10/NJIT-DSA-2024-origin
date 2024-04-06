@@ -9,12 +9,16 @@ public class QueueImplementation<E> implements QueueInterface<E> {
    private int count;
 
    @SuppressWarnings("unchecked")
-   public QueueImplementation(int capacity) {
-      elements = (E[]) new Object[capacity];
-      front = 0;
-      rear = -1;
-      count = 0;
+public QueueImplementation(int capacity) {
+   if (capacity < 2) {
+      throw new IllegalArgumentException("Capacity must be at least 2.");
    }
+
+   elements = (E[]) new Object[capacity];
+   front = 0;
+   rear = -1;
+   count = 0;
+}
 
    public QueueImplementation() {
       this(DEFAULT_CAPACITY);
